@@ -1,8 +1,14 @@
 'use strict';
 
-$(document).on('ready', function () {
-    // Put app logic in here
-   $("div[data-cell]").on("click", function()
-    $(this).text("X");
-});
+$(document).ready(function() {
+  // Put app logic here
+    var block = null;
+    $("data-stack").click(function() {
+        if (block === null) {
+            block = $(this).children().last().detach();
+        }
+        else {
+            $(this).append(block);
+        }
+    });
 });
